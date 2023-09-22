@@ -33,3 +33,173 @@ System.out.println(c);
 }
 }
 
+
+BFS(Breath First Search)
+
+Class solution{
+Public ArrayList<Inetger>  bfs(int v, ArrayList<ArrayList<Ineteger>> adj){
+ArrayList<Integer> bfs=new ArrayList<>();
+Boolean vis[]=new vis[];
+Queue<Integer> q=new Queue<>();
+q.add(0);
+vis[0]=true;
+while(!q.isEmpty()){
+Ineteger node=q.poll();
+bfs.add(node);
+
+for(Integer it:adj.get(node)){
+if(vis[it]==false){
+vis[it]=true;
+q.add(it);
+}
+}
+}
+Return bfs;
+}
+}
+
+Depth First Search(DFS)
+
+Class solution{
+Public static void dfs(int node, boolean vis[], ArrayList<ArrayList<Integre>> adj, ArrayList<Inetegr> ls){
+
+Vis[node]=true;
+ls.add(node);
+for(int it:adj.get(node)){
+if(vis[it]==false){
+dfs(it, vis, adj, ls)
+}
+}
+Public ArrayList<Integer> dfs(int v, ArrayList<ArrayList<Integer>> adj){
+Boolean vis[]=new vis[v+1];
+Vis[0]=true;
+ArrayList<Integer> ls=new ArrayList<>();
+Dfs(0,vis,adj,ls)
+}
+}
+
+
+Trees:-
+Pre_Order:-(Root, Left, Right)
+
+Void Pre_order(node){
+If(node==null){
+Return;
+}
+Print(node->data);
+Pre_order(node->left);
+Pre_order(node->right);
+}
+
+
+In_Order:-(Left, root, Right)
+Void In_order(node){
+If(node==null){
+Return ;
+}
+In_order(node->left);
+Print(node);
+In_order(node->right);
+}
+Post_order(Left, right,root)
+
+Void post_order(node){
+If(node==null){
+return;
+}
+post_order(node->left);
+post_order(node->right);
+print(node);
+
+Recursion + Backtracking:-
+
+
+
+
+
+
+
+
+
+
+
+
+Maximum depth of binary tree
+Class solution{
+Public int maxDepth(TreeNode root){
+If(root==null){
+return 0;
+}
+int lh=maxDepth(root.left);
+int lr=maxDepth(root.right);
+ return 1+Math.max(lh,lr);
+}
+}
+
+Check for balance binary tree
+Class solution{
+Public int checkBalance(TreeNode root){
+If(root==null){
+return -1;
+}
+int lh=checkBalance(root.left);
+int rh=checkBalance(root.right);
+if(abs(lh-rh)>1){
+return -1;
+}
+return Math.max(lh,rh)+1;
+}
+}
+
+Diameter of Binary Tree
+Class solution{
+Public int diameterTree(TreeNode root){
+If(root==null){
+return 0;
+}
+Int max=0;
+int Lh= diameterTree(root.left,max);
+int Rh=diameterTree(root.right,max);
+return 1+Math.max(lh,rh);
+}
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int t = scanner.nextInt();  // Read the number of test cases
+
+        for (int i = 0; i < t; i++) {
+            int a = scanner.nextInt();  // Read integer a
+            int b = scanner.nextInt();  // Read integer b
+            int c = scanner.nextInt();  // Read integer c
+
+            // Check if c is even
+            if (c % 2 == 0) {
+                // If c is even, compare a and b to determine the winner
+                if (a > b) {
+                    System.out.println("First");  // Print "First" if a is greater than b
+                } else {
+                    System.out.println("Second");  // Print "Second" if b is greater than or equal to a
+                }
+            } else {
+                // If c is odd, compare b and a to determine the winner
+                if (b > a) {
+                    System.out.println("Second");  // Print "Second" if b is greater than a
+                } else {
+                    System.out.println("First");  // Print "First" if a is greater than or equal to b
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
